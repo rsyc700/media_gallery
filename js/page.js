@@ -1,4 +1,11 @@
-
+function navToggle() { // creates a new function named navToggle
+  var x = document.getElementById("mainnav"); // creates a variable set to #main-nav
+    if (x.className === "topnav") { // if #main-nav has a class of .topnav,
+    x.className += " responsive";   // then add a new class
+  } else {                          // if it doesn't,
+    x.className = "topnav";         // set class to .topnav
+  } //closes if-else
+} //closes function
 // Slideshow Functions
 var slideIndex = 1; // creates a new variable, names it slideIndex, and sets it = to 1
 
@@ -26,4 +33,27 @@ function showSlides(n) { // creates the showSlides function using n as the param
   }
   slides[slideIndex-1].style.display = "block"; // display slides
   indicator[slideIndex-1].className += " active"; // make indicator active
+}
+
+$(".button").on("click", function() { // when item with class of button is clicked, fire function
+  var modal = $(this).data("modal"); // sets modal var equal to data attribute
+  $(modal).show(); // opens up modal (much code hidden here by jQuery)
+});
+$(".modal").on("click", function(e) { // sets up click function
+  var className = e.target.className; // var className set to event target
+  if(className === "modal" || className === "close"){ // if conditions are met...
+    $(this).closest(".modal").hide(); // then hide the modal
+  } // closes if-statement
+}); // closes function
+
+
+window.onload = function() {
+    if (window.jQuery) {
+        // jQuery is loaded
+    /*    setup();*/
+        alert("Yeah!");
+    } else {
+        // jQuery is not loaded
+        alert("Doesn't Work");
+    }
 }

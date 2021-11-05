@@ -31,7 +31,10 @@ nav {
 }
 nav a{
   text-decoration: none;
-  color: rgba(23, 177, 186, 0.53);
+  color: rgba(23, 177, 186, 0.63);
+}
+i.fas { /*-- adds a little padding left and right on fontawesome icons --*/
+  padding: 0 .33em;
 }
 .nav-links:hover{
   text-decoration: underline;
@@ -107,10 +110,12 @@ nav a{
 .main-grid-item{
   border-radius: 4px;  /*-- rounds borders --*/
   padding: .5em; /*-- adds space inside --*/
-  border-style:  double;
+  border-style: solid;
+  border-color: black;
   box-shadow: 0 6px 8px 0 #000000;
-  background: white;
+  background: #3d3d3d;
   border-radius: 0.5rem;
+  color: white;
 }
 .beta {
   padding-bottom: 56%; /*-- creates ~16:9 ratio--*/
@@ -141,13 +146,34 @@ nav a{
   margin: 1rem 0 0 0;
   text-transform: uppercase; /*--all caps text --*/
   align-self: flex-start; /*-- positions at beginning --*/
-  color: var(--text);
+  color: white;
 }
 .card-text {
   font-size: .80em;
   line-height: 1.2;
   align-self: flex-start;
-  color: var(--text);
+  color: white;
+}
+button.details{
+  background:rgba(23, 177, 186, 0.63);
+  border-color: rgba(23, 177, 186, 0.63);
+  padding: .45em .7em .4em .7em;
+  border-radius: .3rem;
+  font-size: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 3px 6px 0 #000000;
+
+}
+button.details, button.card-more:visited {
+  color: black;
+  border: 1.5px;
+  transition: all 250ms ease-in-out;
+}
+button.details:hover, button.details:active {
+  color: blue;
+  border-color: blue;
 }
 .modal {
    display: none;/*-- hidden by default --*/
@@ -169,10 +195,48 @@ nav a{
    border-radius: 4px;
    animation: fadein .3s ease-in-out; /*-- sets animation properties: name, duration, easing --*/
 }
-
+@keyframes fadein {
+  from{transform:scale(.1);} /*-- modal grows from very small to full size--*/
+}
+.close {
+   color: var(--text);
+   font-size: 2.5em;
+   font-weight: bold;
+   position: absolute; /*-- always at the top right of the modal --*/
+   top: 5px;
+   right: 4.25%;
+   transition: all .2s ease-in;
+   text-shadow: 2px 2px 5px #FAFAFA,
+               -2px -2px 5px #FAFAFA,
+               2px -2px 5px #FAFAFA,
+               -2px 2px 5px #FAFAFA;
+}
+.close:hover,
+.close:focus {
+   color: var(--accent);
+   text-decoration: none;
+   cursor: pointer;
+}
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr; /*-- default modal grid (for mobile screens)--*/
+  grid-gap: 2em;
+}
+.eg-text {
+  align-self: center;
+}
+.eg-text h3 {
+  margin-top: 0;
+  padding-top: 0;
+}
+.modal-body img {
+  margin-bottom: 1.5em;
+  width: 100%;
+  height: auto;
+}
 /*-- Styles for slideshow --*/
 .slideshow {
-  background-color: white;
+  background:#3d3d3d;
   padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -271,7 +335,11 @@ nav a{
 }
 /*-- Footer Styles --*/
 footer {
-
+  background-color: white;
+  padding: .25rem;
+  color: black;
+  text-align: center;
+  width: 100%;
 }
 footer a {
   color: var(--rev-text);
