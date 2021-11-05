@@ -35,7 +35,7 @@ function showSlides(n) { // creates the showSlides function using n as the param
   indicator[slideIndex-1].className += " active"; // make indicator active
 }
 
-$(".button").on("click", function() { // when item with class of button is clicked, fire function
+$(".details_btn").on("click", function() { // when item with class of button is clicked, fire function
   var modal = $(this).data("modal"); // sets modal var equal to data attribute
   $(modal).show(); // opens up modal (much code hidden here by jQuery)
 });
@@ -46,14 +46,14 @@ $(".modal").on("click", function(e) { // sets up click function
   } // closes if-statement
 }); // closes function
 
-
+/*
 window.onload = function() {
     if (window.jQuery) {
         // jQuery is loaded
-    /*    setup();*/
+        setup();
         alert("Yeah!");
     } else {
         // jQuery is not loaded
         alert("Doesn't Work");
     }
-}
+}*/
